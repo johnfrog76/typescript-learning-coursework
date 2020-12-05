@@ -1,4 +1,4 @@
-# Udemy TypseScript Learning
+# Udemy TypeScript Learning
 
 ### TypeSript: The Complete Developers Guide [2020]
 
