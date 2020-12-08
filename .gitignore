@@ -4,3 +4,4 @@ dist
 build
 *notes.txt
 *.js
+.DS_Store
