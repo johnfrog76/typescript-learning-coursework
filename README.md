@@ -4,3 +4,5 @@
 
 - each folder contains projects and excercises
 - each contains readme with context
+
+npm install -g typescript ts-node

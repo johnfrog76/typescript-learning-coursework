@@ -1,23 +1,12 @@
 import { MatchReader } from "./MatchReader";
-import { CsvFileReader } from "./CsvFileReader";
-import { MatchResult } from "./MatchResult";
+import { Summary } from './Summary';
 
-// Create an object that satiffies the DataReader interface
+const matchReader = MatchReader.fromCsv('football.csv')
+const summary = Summary.winsAnalysisWithHtmlReport('Man United');
+const summary1 = Summary.winsAnalysisWithConsoleReport('Newcastle');
 
-const csvFileReader = new CsvFileReader("football.csv");
-
-// Create an instance of  MatchReader
-const matchReader = new MatchReader(csvFileReader);
 matchReader.load();
 
-let manUnitedWins = 0;
+summary.buildAndPrintReport(matchReader.matches);
+summary1.buildAndPrintReport(matchReader.matches);
 
-for (let match of matchReader.matches) {
-  if (match[1] === "Man United" && match[5] === MatchResult.HomeWin) {
-    manUnitedWins++;
-  } else if (match[2] === "Man United" && match[5] === MatchResult.AwayWin) {
-    manUnitedWins++;
-  }
-}
-
-console.log(`Man United won ${manUnitedWins} games`);
